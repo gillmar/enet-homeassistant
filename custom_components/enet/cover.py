@@ -29,7 +29,7 @@ async def async_setup_entry(hass, entry, async_add_entities):
         for channel in device.channels:
             if isinstance(channel, ActuatorChannel) and channel.application_mode in supported_app_modes:
                 async_add_entities([EnetCover(channel, hub.coordinator)])
-    _LOGGER.info("Finished async setup()")
+    _LOGGER.info("Finished async setup(cover)")
 
 
 class EnetCover(EnetBaseChannelEntity, CoverEntity):
